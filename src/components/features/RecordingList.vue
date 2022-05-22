@@ -27,8 +27,9 @@
                   </div>
                 </v-col>
                 <v-col cols="7">
+                  <!-- :src="`http://localhost:3000/recordings/${record.key}`" -->
                   <audio-player
-                    :src="`http://localhost:3000/recordings/${record.key}`"
+                    :src="`https://lugahaudio.herokuapp.com/recordings/${record.key}`"
                   />
                 </v-col>
                 <v-col cols="2">

@@ -90,7 +90,8 @@ export default {
   data() {
     return {
       // headers: {},
-      uploadURL: "http://localhost:3000/recordings",
+      // uploadURL: "http://localhost:3000/recordings",
+      uploadURL: "https://lugahaudio.herokuapp.com/recordings",
       format: "wav",
       fileName: "",
       selectedRecord: null,
