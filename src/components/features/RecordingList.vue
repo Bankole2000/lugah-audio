@@ -13,7 +13,7 @@
               class="px-4 py-3 my-4 d-flex align-center"
             >
               <v-row align="center">
-                <v-col cols="3">
+                <v-col cols="12" md="3">
                   <div class="d-flex align-center">
                     <v-slide-x-transition>
                       <div v-show="hover || !$vuetify.breakpoint.mdAndUp">
@@ -26,13 +26,13 @@
                     <p class="subtitle-1 mb-0">{{ record.title }}</p>
                   </div>
                 </v-col>
-                <v-col cols="7">
+                <v-col cols="12" md="7">
                   <!-- :src="`http://localhost:3000/recordings/${record.key}`" -->
                   <audio-player
                     :src="`https://lugahaudio.herokuapp.com/recordings/${record.key}`"
                   />
                 </v-col>
-                <v-col cols="2">
+                <v-col cols="12" md="2">
                   <div class="d-flex justify-center">
                     <v-tooltip top>
                       <template v-slot:activator="{ on, attrs }">
@@ -43,9 +43,18 @@
                           v-bind="attrs"
                           v-on="on"
                         >
-                          <v-btn color="primary" large class="mx-auto" icon
-                            ><v-icon>mdi-download</v-icon></v-btn
-                          >
+                          <v-btn
+                            color="primary"
+                            large
+                            class="mx-auto"
+                            :icon="$vuetify.breakpoint.mdAndUp"
+                            ><v-icon :left="!$vuetify.breakpoint.mdAndUp"
+                              >mdi-download</v-icon
+                            >
+                            <span v-if="!$vuetify.breakpoint.mdAndUp"
+                              >Download</span
+                            >
+                          </v-btn>
                         </a>
                       </template>
                       <span>Download</span>
@@ -56,14 +65,19 @@
                           color="error"
                           large
                           class="mx-auto"
-                          icon
+                          :icon="$vuetify.breakpoint.mdAndUp"
                           :disabled="loading"
                           :loading="loading"
                           v-bind="attrs"
                           v-on="on"
                           @click="deleteRecording(record)"
-                          ><v-icon>mdi-close-box</v-icon></v-btn
-                        >
+                          ><v-icon :left="!$vuetify.breakpoint.mdAndUp"
+                            >mdi-close-box</v-icon
+                          >
+                          <span v-if="!$vuetify.breakpoint.mdAndUp"
+                            >Delete</span
+                          >
+                        </v-btn>
                       </template>
                       <span>Delete</span>
                     </v-tooltip>
