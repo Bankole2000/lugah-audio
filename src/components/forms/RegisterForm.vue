@@ -22,6 +22,7 @@
               outlined
               :disabled="loading"
               label="Full Name"
+              placeholder="e.g. John Doe"
               :rules="[rules.required]"
               v-model="fullname"
             ></v-text-field>
@@ -29,6 +30,7 @@
               outlined
               :disabled="loading"
               label="Email"
+              placeholder="e.g. your@email.com"
               :rules="[rules.required]"
               v-model="email"
             ></v-text-field>
