@@ -41,7 +41,7 @@
                 ref="recorder"
                 class="mb-4"
                 :upload-url="uploadURL"
-                :attempts="3"
+                :attempts="7"
                 :time="2"
                 :headers="headers"
                 :format="format"

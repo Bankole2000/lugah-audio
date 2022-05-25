@@ -1,6 +1,6 @@
 export default {
   users(state) {
-    return state.users;
+    return state.users.filter(u => u.role === 'USER');
   },
   loggedInUser(state) {
     return state.loggedInUser;
