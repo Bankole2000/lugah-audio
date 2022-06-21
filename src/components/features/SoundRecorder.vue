@@ -37,12 +37,15 @@
           >
             <div>
               <!-- :filename="fileName" -->
+              <v-alert type="info" text dismissible>
+                P.S: Recording time is limited to 15s
+              </v-alert>
               <audio-recorder
                 ref="recorder"
                 class="mb-4"
                 :upload-url="uploadURL"
                 :attempts="7"
-                :time="2"
+                :time="0.25"
                 :headers="headers"
                 :format="format"
                 :mic-failed="micFailed"
