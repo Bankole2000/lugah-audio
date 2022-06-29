@@ -45,7 +45,7 @@
                 class="mb-4"
                 :upload-url="uploadURL"
                 :attempts="7"
-                :time="0.25"
+                :time="5"
                 :headers="headers"
                 :format="format"
                 :mic-failed="micFailed"
